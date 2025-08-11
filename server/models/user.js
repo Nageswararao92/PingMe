@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { use } from "react";
 
 const userSchema=new mongoose.Schema({
      _id:{type:String ,required:true},
@@ -10,9 +9,9 @@ const userSchema=new mongoose.Schema({
         profile_picture:{type:String ,default:''},
          cover_photo:{type:String ,default:''},
          location:{type:String,default:''},
-         followers:[{type:String,ref:'user'}],
-         following:[{type:String,ref:'user'}],
-         connections:[{type:String,ref:'user'}]
+         followers:[{type:String,ref:'User'}],
+         following:[{type:String,ref:'User'}],
+         connections:[{type:String,ref:'User'}]
 },{timestamps:true,minimize:false})
 const User=mongoose.model('User',userSchema);
 export default User
